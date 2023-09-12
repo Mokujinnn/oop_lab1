@@ -4,6 +4,12 @@
 int * genRandArray(int size, int maxValue)
 {
     int * arr = new int[size+1];
+
+    if (!arr)
+    {
+        return nullptr;
+    }
+
     arr[0] = size;
     for (int i = 1; i < size + 1; i++)
     {
@@ -16,6 +22,12 @@ int * genRandArray(int size, int maxValue)
 int ** genRandMatrix(int size, int maxValue)
 {
     int ** arr = new int*[size];
+
+    if (!arr)
+    {
+        return nullptr;
+    }
+
     for (int i = 0; i < size; i++)
     {
         arr[i] = genRandArray(rand()%10, maxValue);
